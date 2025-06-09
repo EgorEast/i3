@@ -447,7 +447,6 @@ exec --no-startup-id sleep 3 && $obsidian
 exec --no-startup-id xrandr --output eDP --mode 1920x1080 --pos 0x0
 exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --pos 1920x-600 --rotate left
 exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 47:39
-exec --no-startup-id blueman-applet
 
 ###############
 # system tray #
@@ -456,13 +455,13 @@ exec --no-startup-id blueman-applet
 # you need to have tray apps started manually one by one:
 
 # start blueberry app for managing bluetooth devices from tray:
-#exec --no-startup-id blueberry-tray
+exec --no-startup-id blueberry-tray
 
 # networkmanager-applet
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # clipman-applet
-#exec --no-startup-id xfce4-clipman
+exec --no-startup-id xfce4-clipman
 
 ##################
 # floating rules #
