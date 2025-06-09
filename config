@@ -167,12 +167,15 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 #bindsym $mod+r mode "resize"
 
+set $browser "yandex-browser-stable"
+set $terminal "kitty"
+
 ######################################
 # keybindings for different actions: #
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id $terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -288,8 +291,9 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 # toggle between audio devices for output
 bindsym $mod+p exec --no-startup-id ~/.config/i3/scripts/audio-device-switch
 
+
 ## App shortcuts
-bindsym $mod+w exec --no-startup-id /usr/bin/firefox
+bindsym $mod+w exec --no-startup-id $browser
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
@@ -303,7 +307,7 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
-set $ws2 "2:"
+set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
@@ -323,15 +327,15 @@ set $ws10 "10"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [class="Xfce4-terminal"] $ws1
-assign [class="(?i)firefox"] $ws2
+assign [class="Kitty"] $ws1
+assign [class="Yandex"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
-for_window [class=Xfce4-terminal] focus
-for_window [class=(?i)firefox] focus
+for_window [class=Kitty] focus
+for_window [class=Yandex] focus
 for_window [class=Thunar] focus
 for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
@@ -431,9 +435,11 @@ exec --no-startup-id /usr/bin/dunst
 #exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
-#exec --no-startup-id sleep 2 && xfce4-terminal
-exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
+exec --no-startup-id sleep 2 && $terminal
+# exec --no-startup-id sleep 7 && $browser https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
+exec --no-startup-id sleep 3 && $browser 
 #exec --no-startup-id sleep 3 && thunar
+# exec --no-startup-id xrandr --output eDP --mode 1920x1080 --pos 0x0 --output HDMI-A-0 --mode 1920x1080 --pos 1920x0 --rotate left
 
 ###############
 # system tray #
