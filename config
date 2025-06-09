@@ -213,9 +213,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_bri
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+b focus up
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+b focus left
 bindsym $mod+o focus right
 
 # alternatively, you can use the cursor keys:
@@ -225,9 +225,9 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+b move up
+bindsym $mod+Shift+j move down 
+bindsym $mod+Shift+k move up   
+bindsym $mod+Shift+b move left 
 bindsym $mod+Shift+o move right
 
 # alternatively, you can use the cursor keys:
@@ -300,7 +300,7 @@ bindsym $mod+n exec --no-startup-id $fileManager
 # bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym Print exec --no-startup-id spectacle
 bindsym $mod+Shift+s exec --no-startup-id spectacle
-bindsym $mod+Shift+X exec --no-startup-id dunstctl history-pop
+bindsym $mod+Shift+x exec --no-startup-id dunstctl history-pop
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
