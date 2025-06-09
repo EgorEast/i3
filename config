@@ -170,6 +170,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 set $browser "yandex-browser-stable"
 set $terminal "kitty"
 set $fileManager "thunar"
+set $obsidian "obsidian"
 
 ######################################
 # keybindings for different actions: #
@@ -441,6 +442,7 @@ exec --no-startup-id /usr/bin/dunst
 exec --no-startup-id sleep 2 && $terminal
 # exec --no-startup-id sleep 7 && $browser https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 exec --no-startup-id sleep 3 && $browser 
+exec --no-startup-id sleep 3 && $obsidian
 #exec --no-startup-id sleep 3 && thunar
 exec --no-startup-id xrandr --output eDP --mode 1920x1080 --pos 0x0
 exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --pos 1920x-600 --rotate left
@@ -470,6 +472,8 @@ exec --no-startup-id blueman-applet
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="spectacle" instance="spectacle"] floating enable
+
 
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
