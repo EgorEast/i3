@@ -390,7 +390,7 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
 
 # num lock activated
-#exec --no-startup-id numlockx on
+exec --no-startup-id numlockx on
 
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
 #exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
@@ -443,7 +443,8 @@ exec --no-startup-id sleep 3 && $browser
 #exec --no-startup-id sleep 3 && thunar
 exec --no-startup-id xrandr --output eDP --mode 1920x1080 --pos 0x0
 exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --pos 1920x-600 --rotate left
-exec --no-startup-id brightnessctl s 300
+exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 47:39
+exec --no-startup-id blueman-applet
 
 ###############
 # system tray #
